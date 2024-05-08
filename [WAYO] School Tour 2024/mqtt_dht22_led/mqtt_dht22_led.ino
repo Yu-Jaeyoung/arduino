@@ -128,12 +128,12 @@ void loop() {
 
   client.loop();
 
-  float humidity = dht.readHumidity();
-  float temperature = dht.readTemperature();
-
   unsigned long now = millis();
   if (now - lastMsg > 2000) {
     lastMsg = now;
+
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
 
     char msg[50];
     snprintf(msg, 50, "Humidity: %.2f%%, Temperature: %.2fC", humidity, temperature);
