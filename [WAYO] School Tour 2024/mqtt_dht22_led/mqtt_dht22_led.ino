@@ -70,7 +70,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
 
-    if (client.connect("여기를 바꿔주세요.")) {
+    if (client.connect("")) {
       Serial.println("connected");
       client.subscribe(topic);
     } else {

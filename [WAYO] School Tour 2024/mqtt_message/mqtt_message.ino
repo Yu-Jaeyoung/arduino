@@ -8,7 +8,7 @@ const char* password = "";  // Enter WiFi password
 // MQTT 브로커 정보
 const char* mqtt_server = "broker.emqx.io";  // 브로커 주소
 const int mqtt_port = 1883;                  // 브로커 포트
-const char* topic = "여기를 바꿔주세요";
+const char* topic = "여기를 바꿔주세요.";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -35,7 +35,7 @@ void setup_wifi() {
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect("여기를 바꿔주세요")) {
+    if (client.connect("")) {
       Serial.println("connected");
       client.subscribe(topic);
     } else {
